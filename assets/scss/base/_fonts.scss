@@ -1,0 +1,23 @@
+@include font-face("AlHurra", "~/assets/fonts/AlHurra/AlHurraTxt", normal, normal, ttf);
+@include font-face("PoppinsLatin", "~/assets/fonts/poppins/PoppinsLatin", normal, normal, ttf);
+@include font-face("icon-font", "~/assets/fonts/icon-font/icon-font", normal, normal, woff);
+@include font-face("ProFast", "~/assets/fonts/pro-fast/pro-fast", normal, normal, ttf);
+@include font-face("calibri", "~/assets/fonts/calibri/calibri", normal, normal, woff);
+@include font-face("TitleFont", "~/assets/fonts/title-font/TitleFont", normal, normal, ttf);
+
+[class^="icon-"],
+[class*=" icon-"] {
+	display: inline-flex;
+	&::before {
+		font-family: icon-font;
+		font-style: normal;
+		font-weight: normal;
+		text-decoration: inherit;
+		text-align: center;
+		font-variant: normal;
+		text-transform: none;
+		line-height: 1em;
+		-webkit-font-smoothing: antialiased;
+		-moz-osx-font-smoothing: grayscale;
+	}
+}

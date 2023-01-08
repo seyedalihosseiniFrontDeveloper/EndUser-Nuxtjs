@@ -1,0 +1,45 @@
+* > .intro-x {
+    transform: translateX(50px);
+}
+
+* > .-intro-x {
+    transform: translateX(-50px);
+}
+
+* > .-intro-x,
+* > .intro-x {
+    position: relative;
+    opacity: 0;
+    z-index: 49;
+    animation: intro-x-animation 0.3s ease-in-out 0.2s forwards;
+}
+
+@keyframes intro-x-animation {
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+* > .intro-y {
+    transform: translateY(50px);
+}
+
+* > .-intro-y {
+    transform: translateY(-50px);
+}
+
+* > .intro-y,
+* > .-intro-y {
+    z-index: 49;
+    position: relative;
+    opacity: 0;
+    animation: intro-y-animation 0.3s ease-in-out 0.2s forwards;
+}
+
+@keyframes intro-y-animation {
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}

@@ -1,0 +1,14 @@
+
+.multi-bg{
+  @apply top-[-3px];
+  > img{
+    @apply absolute opacity-70 w-0 sm:w-[40%] lg:w-1/2;
+    &.start-image{
+      @apply rotate-[180deg] right-0;
+    }
+    &.end-image{
+      @apply left-0;
+      transform: rotateX(180deg);
+    }
+  }
+}

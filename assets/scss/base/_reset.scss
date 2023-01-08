@@ -1,0 +1,35 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: "ProFast";
+	outline: none;
+}
+
+.font-family-roboto {
+	font-family: roboto;
+}
+
+.font-family-poppins-latin {
+	font-family: "PoppinsLatin";
+}
+
+a {
+	&,
+	&:active,
+	&:hover {
+		text-decoration: none;
+		color: inherit;
+		transition: all 0.1s ease;
+	}
+
+	&:hover {
+		& img {
+			opacity: 0.75;
+		}
+	}
+}
+
+ul li {
+	list-style: none;
+}

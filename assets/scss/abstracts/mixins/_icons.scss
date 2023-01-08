@@ -1,0 +1,9 @@
+@mixin generate-icon() {
+  @each $key, $value in $icon-font {
+    .icon-font#{$key} {
+      &::before {
+        content: $value;
+      }
+    }
+  }
+}

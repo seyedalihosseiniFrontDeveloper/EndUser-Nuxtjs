@@ -1,0 +1,107 @@
+.print-font {
+	*:not(.just-inline-font) {
+		font-family: Calibri !important;
+	}
+}
+.info-box {
+	font-family: Calibri !important;
+	font-size: 21px !important;
+}
+[data-parameter-key]{
+	display: inline-block !important;
+	padding: 0px 15px !important;
+	width: auto !important;
+	font-weight: bold;
+	border: none !important;
+}
+[data-parameter-key],
+.info-box .content-text {
+	padding: 20px 15px 15px;
+	border-radius: 15px;
+	width: 100%;
+	margin: 10px auto 0px;
+	text-align: justify;
+	display: block;
+	border: 3px dashed rgb(175, 212, 218);
+	line-height: 1.3;
+}
+
+.info-box-main ~ .info-box-main {
+	padding: 20px 15px 5px;
+}
+
+.info-box-main:last-child {
+	min-height: 630px;
+}
+
+.mini-print-footer {
+	height: 200px;
+}
+.min-height-set {
+	min-height: 810px;
+}
+
+.row-box-one-side-print .box-one-side-print {
+	opacity: 0;
+}
+.row-box-one-side-print:first-child .box-one-side-print {
+	opacity: 1;
+}
+.table_main {
+	table {
+		border: none !important;
+		td span {
+			padding: 3px 15px 15px;
+		}
+	}
+	> span {
+		display: inline;
+		padding: 0 3px;
+		margin: 0 3px;
+	}
+}
+.a4-size {
+	page-break-before: always;
+	break-before: page;
+	padding-top: 20px !important;
+}
+@media print and (width: 21cm) and (height: 29.7cm) {
+	@page {
+		margin: 3cm;
+	}
+}
+
+/* style sheet for "letter" printing */
+@media print and (width: 8.5in) and (height: 11in) {
+	@page {
+		margin: 1in;
+	}
+}
+
+/* A4 Landscape*/
+@page {
+	size: A4 portrait;
+	margin: 10%;
+}
+.text-main {
+	position: absolute;
+	top: -24px;
+	left: 0;
+	right: 0;
+	text-align: center;
+	z-index: 6;
+	.title {
+		display: inline-block;
+		width: auto;
+		text-align: center;
+		font-size: 30px;
+		border: 3px dashed rgb(175, 212, 218);
+		color: rgb(0, 0, 0);
+		background-color: rgb(255, 255, 255);
+		padding: 5px 50px !important;
+		line-height: 1;
+		border-radius: 100px;
+		margin-top: -2px;
+		font-weight: bold;
+	}
+}

@@ -1,0 +1,14 @@
+.select-type {
+	@apply pt-4 grid gap-[10px] grid-cols-1 sm:grid-cols-2 md:grid-cols-3;
+	.item {
+		@apply relative flex items-center justify-center border border-blue-4 rounded-[25px] h-[82px] overflow-hidden cursor-pointer hover:before:opacity-100 hover:text-white text-gray-56 z-0;
+		@apply before:content-[''] before:absolute before:inset-0 before:bg-gradient-to-l before:from-blue-18 before:to-blue-11 before:opacity-0 before:ease-in-out before:duration-300;
+		&.active {
+			@apply before:opacity-100 text-white;
+		}
+
+		.text {
+			@apply relative z-[1] text-[16px];
+		}
+	}
+}

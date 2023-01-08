@@ -1,0 +1,13 @@
+$numerical-property: (
+        fs : (font-size: (22:"px")),
+        br : (border-radius: (60:"px")),
+        z-index : (z-index: (60:"")),
+) !default;
+$value-property: (
+        color : color,
+        bgc   : background-color,
+        btc   : border-top-color,
+        brc   : border-right-color,
+        bbc   : border-bottom-color,
+        blc   : border-left-color,
+) !default;

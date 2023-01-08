@@ -1,0 +1,64 @@
+$breakpoints: $grid-breakpoints-custom;
+@if $use-bootstrap {
+  $breakpoints: $grid-breakpoints;
+}
+
+@mixin make-space($prefixes, $breakpoints,$type,$colors:"") {
+  @each $breakpoint-name, $breakpoint-value in $breakpoints {
+    @if ($type == "num") {
+      @if ($breakpoint-value == 0) {
+        @each $attr-short, $attr-long in $prefixes {
+          @each $property, $until in $attr-long {
+            @each $num, $unit in $until {
+              @for $i from 1 through $num {
+                .#{$attr-short}-#{$i} {
+                  #{$property}: #{$i}#{$unit};
+                }
+              }
+            }
+          }
+        }
+      } @else {
+        @media screen and (min-width: $breakpoint-value) {
+          @each $attr-short, $attr-long in $prefixes {
+            @each $property, $until in $attr-long {
+              @each $num, $unit in $until {
+                @for $i from 1 through $num {
+                  .#{$attr-short}-#{$breakpoint-name}-#{$i} {
+                    #{$property}: #{$i}#{$unit};
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    } @else if ($type == "val") {
+      @if ($breakpoint-value == 0) {
+        @each $attr-short, $attr-long in $prefixes {
+          @each $color-name, $color-value in $colors {
+            .#{$attr-short}#{$color-name} {
+              #{$attr-long}: $color-value;
+            }
+            .#{$attr-short}#{$color-name}-hover {
+              #{$attr-long}: $color-value;
+            }
+          }
+        }
+      } @else {
+        @media screen and (min-width: $breakpoint-value) {
+          @each $attr-short, $attr-long in $prefixes {
+            @each $color-name, $color-value in $colors {
+              .#{$attr-short}-#{$breakpoint-name}#{$color-name} {
+                #{$attr-long}: $color-value;
+              }
+              .#{$attr-short}-#{$breakpoint-name}#{$color-name}-hover {
+                #{$attr-long}: $color-value;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

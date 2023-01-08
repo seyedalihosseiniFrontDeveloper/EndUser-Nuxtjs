@@ -1,0 +1,119 @@
+
+.step-maker {
+  .item {
+    @apply relative;
+    @apply before:w-[60%] before:h-[3px] before:absolute ltr:before:right-[-60%] rtl:before:left-[-60%] before:border-dashed before:top-[50%] before:border-b-2 before:pointer-events-none;
+    .main {
+      @apply flex rounded-3xl items-center justify-center md:justify-between py-1 md:py-3 md:px-3 shadow-step shadow-blue-11-b45 relative z-[1] cursor-pointer transition-all duration-200;
+    }
+
+    &:hover {
+      .main {
+        @apply scale-110;
+      }
+
+      .details {
+        @apply visible opacity-50;
+      }
+    }
+
+    .details {
+      @apply absolute left-0 bottom-[-50px] rounded-3xl opacity-0 invisible transition-all duration-200 hidden md:flex;
+      span {
+        @apply text-white;
+      }
+    }
+
+    &:last-child {
+      @apply before:hidden;
+    }
+
+    h5 {
+      @apply hidden md:block w-full;
+    }
+
+    //&:not(.active){
+    .image {
+      @apply hidden md:flex;
+    }
+
+    //}
+    &.passed {
+      @apply before:border-green-1;
+      .main {
+        @apply bg-gradient-to-l from-green-14 to-green-1;
+      }
+
+      .details {
+        @apply bg-gradient-to-l from-green-14 to-green-1;
+      }
+
+      .number {
+        @apply border-green-1 bg-white;
+        span {
+          @apply text-green-1;
+        }
+      }
+
+      h5 {
+        @apply text-white;
+      }
+
+      .image {
+        @apply border-green-1;
+      }
+    }
+
+    &.active {
+      @apply before:border-blue-11;
+      .main {
+        @apply bg-gradient-to-l from-blue-18 to-blue-11;
+      }
+
+      .details {
+        @apply bg-gradient-to-l from-blue-18 to-blue-11;
+      }
+
+      .number {
+        @apply border-blue-18 bg-white;
+        span {
+          @apply text-blue-11;
+        }
+      }
+
+      h5 {
+        @apply text-white;
+      }
+
+      .image {
+        @apply border-blue-18;
+      }
+    }
+
+    &.disabled {
+      @apply before:border-gray-6;
+      .main {
+        @apply bg-gradient-to-l from-gray-27 to-gray-28;
+      }
+
+      .details {
+        @apply bg-gradient-to-l from-gray-27 to-gray-28;
+      }
+
+      .number {
+        @apply border-gray-6 bg-white;
+        span {
+          @apply text-gray-6;
+        }
+      }
+
+      h5 {
+        @apply text-gray-6;
+      }
+
+      .image {
+        @apply border-gray-6;
+      }
+    }
+  }
+}

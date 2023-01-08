@@ -1,0 +1,24 @@
+.header {
+  &.active {
+    @apply right-[0];
+    .header-icon {
+      @apply right-[320px];
+    }
+
+    .header-icon {
+      @media screen and (max-width: 768px) {
+        //@apply right-[320px];
+
+      }
+      @media screen and (max-width: 380px) {
+        @apply top-[20px] right-[260px] rounded-[15px] text-[20px];
+      }
+    }
+  }
+
+  &.hide-icon {
+    .header-icon {
+      @apply right-[-52px];
+    }
+  }
+}

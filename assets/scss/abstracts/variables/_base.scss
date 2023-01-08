@@ -1,0 +1,10 @@
+$use-bootstrap: false;
+$default-fonts: serif, sans-serif, cursive, fantasy, monospace;
+$grid-breakpoints-custom: (
+        xs: 0,
+        sm: 576px,
+        md: 768px,
+        lg: 992px,
+        xl: 1200px,
+        xxl: 1400px
+) !default;

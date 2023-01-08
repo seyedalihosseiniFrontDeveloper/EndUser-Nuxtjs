@@ -1,0 +1,30 @@
+.iraq-map {
+  #iraq-map{
+    rect{
+      pointer-events: none;
+    }
+  }
+  text {
+    opacity: 0;
+    cursor: pointer;
+    pointer-events: none;
+
+    &:hover {
+      opacity: 1;
+    }
+  }
+
+  path {
+    cursor: pointer;
+    transition: all .2s ease 0.1s;
+    &:hover {
+      background-color: #000;
+    ~{
+      text {
+        opacity: 1;
+      }
+    }
+
+  }
+  }
+}
